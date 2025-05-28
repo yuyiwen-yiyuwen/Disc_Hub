@@ -8,7 +8,7 @@ Disc-Hub enables users to flexibly combine training strategies and classifiers, 
 
 The workflow diagram is below, providing an overview of the process.
 
-![workflow](img/workflow.png)
+![workflow](img/workflow.jpg)
 
 ## Installation
 
