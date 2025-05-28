@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
     df = train_ensemble(df=df, framework = 'kfold', discriminator = 'mlp')
 
-    #画图
+    #plot
     plot_ids_and_fdr(df,
         col_score1='ensemble_prob',
         col_score2='cscore_pr_run',
