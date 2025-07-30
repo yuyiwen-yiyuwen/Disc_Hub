@@ -112,7 +112,7 @@ def plot_ids_and_fdr(df, col_score, save_path):
     ax2.plot(external_fdr_v_right1, report_fdr_v1, label=col_score, color='blue')
 
     # Plot external FDR vs number of IDs on left y-axis (blue thick curve)
-    ax1.plot(external_fdr_v_left1, id_num_v1, label=col_score, color='blue', linewidth=3)
+    ax1.plot(external_fdr_v_left1, id_num_v1, label=col_score, color='red', linewidth=3)
 
     # Configure axis labels and tick styles
     ax1.set_xlabel('External  FDR', fontsize=22)
@@ -122,7 +122,7 @@ def plot_ids_and_fdr(df, col_score, save_path):
     ax2.tick_params(axis='y', labelcolor='red', labelsize=15)
 
     # Add legend
-    plt.legend(fontsize=15,  loc='best')
+    plt.legend(fontsize=15,  loc='upper left')
 
     # Add annotation box with 1% FDR stats
     text = (

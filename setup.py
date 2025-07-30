@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="Disc_Hub_DIA",
-    version="0.2.1",
+    version="0.3.1",
     packages=find_packages(where="src"),
     package_dir={"": "src"},
     install_requires=["numpy","matplotlib","pandas", "pyarrow==19.0.0",

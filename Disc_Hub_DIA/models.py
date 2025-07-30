@@ -1,47 +1,95 @@
-import torch
-import torch.nn  as nn
+from sklearn.neural_network import MLPClassifier
+from sklearn.ensemble import VotingClassifier
 
-class ResNetModel(nn.Module):
-    def __init__(self, input_dim):
-        super(ResNetModel, self).__init__()
-        self.dense1 = nn.Linear(input_dim, 256)
-        self.batch_norm1 = nn.BatchNorm1d(256)
-        self.dropout1 = nn.Dropout(0.7)
+class mlp_DIA_NN:
+    def __init__(self,
+                 num_nn=5,
+                 batch_size=50,
+                 hidden_layers=(25, 20, 15, 10, 5),
+                 learning_rate=0.003,
+                 max_iter=5,
+                 debug=True):
+        """
+        Initialize an ensemble of MLP classifiers wrapped in a soft voting classifier.
 
-        self.dense2 = nn.Linear(256, 256)
-        self.batch_norm2 = nn.BatchNorm1d(256)
-        self.dropout2 = nn.Dropout(0.7)
+        Parameters:
+        - n_model: Number of individual MLP models in the ensemble
+        - batch_size: Batch size for training each MLP
+        - hidden_layers: Tuple specifying hidden layer sizes for each MLP
+        - learning_rate: Initial learning rate for training
+        - max_iter: Maximum number of iterations per MLP fit
+        - debug: If True, run in single-threaded mode (n_jobs=1) for debugging
+        """
+        self.num_nn = num_nn
+        self.batch_size = batch_size
+        self.hidden_layers = hidden_layers
+        self.learning_rate = learning_rate
+        self.max_iter = max_iter
+        self.debug = debug
 
-        self.dense3 = nn.Linear(256, 128)
-        self.batch_norm3 = nn.BatchNorm1d(128)
-        self.dropout3 = nn.Dropout(0.55)
+        # Create individual MLP classifiers
+        self.mlps = [
+            MLPClassifier(
+                max_iter=self.max_iter,
+                shuffle=True,
+                random_state=42 + i,  # Ensures reproducibility with different seeds
+                learning_rate_init=self.learning_rate,
+                solver='adam',
+                batch_size=self.batch_size,
+                activation='relu',
+                hidden_layer_sizes=self.hidden_layers
+            ) for i in range(self.num_nn)
+        ]
 
-        self.dense4 = nn.Linear(128, 64)
-        self.batch_norm4 = nn.BatchNorm1d(64)
-        self.dropout4 = nn.Dropout(0.45)
+        # Assign names to each classifier
+        self.names = [f'mlp{i}' for i in range(self.num_nn)]
 
-        self.dense5 = nn.Linear(64, 32)
-        self.batch_norm5 = nn.BatchNorm1d(32)
+        # Wrap in a VotingClassifier with soft voting
+        self.model = VotingClassifier(
+            estimators=list(zip(self.names, self.mlps)),
+            voting='soft',
+            n_jobs=1 if self.debug else self.num_nn
+        )
 
-        self.output = nn.Linear(32, 1)
+    def fit(self, X, y):
+        """
+        Fit the ensemble model on training data.
 
-    def forward(self, x, return_features=False):
-        # Forward pass with residual connection
-        x = torch.relu(self.batch_norm1(self.dense1(x)))
-        x = self.dropout1(x)
+        Parameters:
+        - X: Training features
+        - y: Training labels
+        """
+        self.model.fit(X, y)
 
-        residual = torch.relu(self.batch_norm2(self.dense2(x)))
-        residual = self.dropout2(residual)
+    def predict(self, X):
+        """
+        Predict class labels for the given input.
 
-        x = torch.add(x, residual)
-        x = torch.relu(self.batch_norm3(self.dense3(x)))
-        x = self.dropout3(x)
+        Parameters:
+        - X: Input features
 
-        x = torch.relu(self.batch_norm4(self.dense4(x)))
-        x = self.dropout4(x)
+        Returns:
+        - Predicted class labels
+        """
+        return self.model.predict(X)
 
-        x = torch.relu(self.batch_norm5(self.dense5(x)))
-        features = x
-        out = torch.sigmoid(self.output(x))
+    def predict_proba(self, X):
+        """
+        Predict class probabilities for the given input.
 
-        return (out, features) if return_features else out
+        Parameters:
+        - X: Input features
+
+        Returns:
+        - Class probability estimates
+        """
+        return self.model.predict_proba(X)
+
+    def get_model(self):
+        """
+        Return the underlying VotingClassifier model.
+
+        Returns:
+        - sklearn VotingClassifier object
+        """
+        return self.model

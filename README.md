@@ -40,7 +40,16 @@ pip install Disc_Hub_DIA
 
 ## Usage
 
- Here is an example of how to use `Disc_Hub` for DIA identification  : 
+ To ensure that this tool can be used with different datasets, please make sure your dataset meets the following characteristics: 
+
+```python
+1.Each row represents a peptide ion;
+2.Contains a 'decoy' column, where decoy=0 represents target samples and decoy=1 	
+  represents decoy samples;
+3.The column names of feature columns start with 'score_'.
+```
+
+Here is an example of how to use `Disc_Hub` for DIA identification  : 
 
 ```python
 import pandas as pd
@@ -50,8 +59,8 @@ if __name__ == '__main__':
     file_path = r"plasma_600ng_464.parquet"
     df = pd.read_parquet(file_path)
 	
-    # The framework hyperparameter options are "semi," "fully," and "kfold."
-    # The discriminator hyperparameter options are "svm," "xgboost," and "mlp."
+    # The framework hyperparameter options are "semi", "fully", and "kfold".
+    # The discriminator hyperparameter options are "lda", "svm", "xgboost", and "mlp".
     df = train_ensemble(df=df, framework = 'kfold', discriminator = 'mlp')
 
     plot_ids_and_fdr(df,
@@ -63,13 +72,27 @@ if __name__ == '__main__':
 
 ## Performance test
 
+1. Fix the learner as MLP and test the performance of three training frameworks.
+
 ![framework](img/framework.jpg)
 
 
 
-![discriminator](img/discriminator.jpg)
+2. Fix the training framework as K-fold and test the performance of four classifiers.
+
+![discriminator-kfold](img/discriminator-kfold.jpg)
 
 
+
+3. Fix the training framework as semi-supervised and test the performance of four classifiers.
+
+![discriminator-semi](C:\Users\53458\Desktop\Disc_Hub\img\discriminator-semi.jpg)
+
+
+
+4. Fix the training framework as fully supervised and test the performance of four classifiers.
+
+![discriminator-fully](C:\Users\53458\Desktop\Disc_Hub\img\discriminator-fully.jpg)
 
 ## Dataset
 
