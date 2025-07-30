@@ -74,23 +74,23 @@ if __name__ == '__main__':
 
 1. Fix the learner as MLP and test the performance of three training frameworks.
 
-![framework](img/framework.JPG)
+![framework](img/framework.jpg)
 
 
 
 2. Fix the training framework as K-fold and test the performance of four classifiers.
 
-![discriminator-kfold](img/discriminator-kfold.JPG)
+![discriminator-kfold](img/discriminator-kfold.jpg)
 
 3. Fix the training framework as semi-supervised and test the performance of four classifiers.
 
-![discriminator-semi](img/discriminator-semi.JPG)
+![discriminator-semi](img/discriminator-semi.jpg)
 
 
 
 4. Fix the training framework as fully supervised and test the performance of four classifiers.
 
-![discriminator-fully](img/discriminator-fully.JPG)
+![discriminator-fully](img/discriminator-fully.jpg)
 
 ## Dataset
 
