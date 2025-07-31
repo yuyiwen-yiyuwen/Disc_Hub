@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="592cb304-8877-4fe8-94d5-556f913995fa" name="更改" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/Disc_Hub.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/LDA.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/LDA.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/XGBoost.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/XGBoost.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/dynamic_weighting.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/dynamic_weighting.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/evaluate.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/evaluate.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/mlp_dia_nn.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/mlp_dia_nn.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/svm.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/svm.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Disc_Hub_DIA/train.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/Disc_Hub_DIA_FDR/train.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/setup.py" beforeDir="false" afterPath="$PROJECT_DIR$/setup.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/test.py" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="30ccQayCo2533K9U0oC44HXsUjb" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/53458/Desktop/Disc_Hub&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="应用程序级" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="默认任务">
+      <changelist id="592cb304-8877-4fe8-94d5-556f913995fa" name="更改" comment="" />
+      <created>1753930286996</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1753930286996</updated>
+      <workItem from="1753930288011" duration="300000" />
+      <workItem from="1753930604176" duration="1614000" />
+      <workItem from="1753934016789" duration="12000" />
+      <workItem from="1753934033939" duration="2000" />
+      <workItem from="1753934213932" duration="133000" />
+      <workItem from="1753934562904" duration="22000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/setup_py$test.coverage" NAME="test 覆盖结果" MODIFIED="1753934286035" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/Disc_Hub$test.coverage" NAME="test 覆盖结果" MODIFIED="1753931585109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>

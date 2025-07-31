@@ -32,8 +32,8 @@ To use `Disc_Hub`,  make sure you have the following dependencies installed:
 
  You can install the `Disc_Hub` package using pip: 
 
-```
-pip install Disc_Hub_DIA
+```python
+pip install Disc_Hub_DIA_FDR
 ```
 
 
@@ -53,18 +53,21 @@ Here is an example of how to use `Disc_Hub` for DIA identification  :
 
 ```python
 import pandas as pd
-from Disc_Hub_DIA import train_ensemble, plot_ids_and_fdr
+import warnings
+from sklearn.exceptions import ConvergenceWarning
+from Disc_Hub_DIA_FDR import train_ensemble, plot_ids_and_fdr
+
 
 if __name__ == '__main__':
-    file_path = r"plasma_600ng_464.parquet"
-    df = pd.read_parquet(file_path)
-	
-    # The framework hyperparameter options are "semi", "fully", and "kfold".
-    # The discriminator hyperparameter options are "lda", "svm", "xgboost", and "mlp".
-    df = train_ensemble(df=df, framework = 'kfold', discriminator = 'mlp')
+    warnings.filterwarnings("ignore", category=ConvergenceWarning)
 
+    file_path = r"C:\Users\53458\Desktop\Dataset\SC_3116.parquet"
+    df = pd.read_parquet(file_path)
+
+    df = train_ensemble(df=df, framework = 'kfold', discriminator = 'mlp')
+    # framework + '_' + discriminator
     plot_ids_and_fdr(df,
-    col_score='ensemble_prob',
+    col_score='kfold_mlp',
     save_path=r"picture_disc_hub.png")
 ```
 
