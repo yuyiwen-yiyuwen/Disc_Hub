@@ -40,7 +40,10 @@ def train_with_mlp_DIA_NN(model_id, X_train, y_train, X_val, y_val,
         batch_size=batch_size,
         hidden_layers=(25, 20, 15, 10, 5),
         learning_rate=0.003,
-        max_iter=5,
+        max_iter=100,
+        early_stopping=True,
+        n_iter_no_change=5,
+        tol=1e-4,
         debug=True
     )
     model.fit(X_train, y_train)
@@ -123,7 +126,10 @@ def train_mlp_DIA_NN_semi(model_id, X_train, y_train, X_val, y_val,
         batch_size=batch_size,
         hidden_layers=(25, 20, 15, 10, 5),
         learning_rate=0.003,
-        max_iter=5,
+        max_iter=100,
+        early_stopping=True,
+        n_iter_no_change=5,
+        tol=1e-4,
         debug=True
     )
 
