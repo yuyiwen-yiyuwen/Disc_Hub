@@ -66,6 +66,9 @@ if __name__ == '__main__':
 
     df = train_ensemble(df=df, framework = 'kfold', discriminator = 'mlp')
     # framework + '_' + discriminator
+    # about "framework", you can choose "semi", "fully", "kfold";
+    # about "discriminator", you can choose "lda", "svm", "xgboost", "mlp";
+    
     plot_ids_and_fdr(df,
     col_score='kfold_mlp',
     save_path=r"picture_disc_hub.png")
